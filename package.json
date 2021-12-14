@@ -1,0 +1,24 @@
+{
+  "name": "zoo_keepr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mloercher/zoo_keepr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mloercher/zoo_keepr/issues"
+  },
+  "homepage": "https://github.com/mloercher/zoo_keepr#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
