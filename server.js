@@ -8,6 +8,8 @@ app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
 const { animals } = require("./data/animals.json");
+app.use(express.static('public'));
+
 
 
 function filterByQuery(query, animalsArray) {
@@ -111,6 +113,23 @@ app.get('/api/animals/:id', (req, res) => {
     const animal = createNewAnimal(req.body, animals);
     res.json(animal);
   }
+});
+
+//index.html route_________
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'));
+});
+//animals.html route___________
+app.get('/animals', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/animals.html'));
+});
+//zookeeper.html route___________
+app.get('/zookeepers', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/zookeepers.html'));
+});
+//wildcard route___________If user searches for route that doesn't exist, will be served homepage
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
 
